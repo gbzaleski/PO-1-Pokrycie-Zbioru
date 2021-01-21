@@ -34,12 +34,12 @@ Spacje i końce wiersza nie są znaczące. Dane programu to ciąg liczb całkowi
 
 Składnię danych określa poniższa gramatyka bezkontekstowa, w rozszerzonej notacji BNF , z symbolem początkowym Dane:
 
-Dane ::= { Zbiór | Zapytanie }
-Zbiór ::= { Składnik } 0
-Składnik ::= Element | Nieskończony | Skończony
-Element ::= d
-Nieskończony ::= d u
-Skończony ::= d u u
+Dane ::= { Zbiór | Zapytanie }\
+Zbiór ::= { Składnik } 0\
+Składnik ::= Element | Nieskończony | Skończony\
+Element ::= d\
+Nieskończony ::= d u\
+Skończony ::= d u u\
 Zapytanie ::= u d
 
 W gramatyce nawiasy klamrowe oznaczają powtórzenie zero lub więcej razy a kreska pionowa oznacza alternatywę.
@@ -97,57 +97,3 @@ Nie ma spacji ani na początku ani na końcu wiersza.
 Każdy wiersz jest zakończony reprezentacją końca wiersza.
 
 Jeśli problem, którego dotyczy zapytanie, ma rozwiązanie, to w wierszu jest reprezentacja rozwiązania, w przeciwnym przypadku jest tam liczba 0.
-Przykład
-
-Dla danych z pliku przykład.in :
-
-2 0
-
-   1      0 1
-
-0 -3
-1
-0
-2 3 2 0
--3 3
--3 2
--3 1
-4 -1 -5 1000000000 0
-2 -2 0
--6 3
--6 2
--6 1
-1 6 0
--6 3
--6 2
--6 1
-
-poprawnym wynikiem jest zawartość pliku przykład.out :
-
-0
-1 2 5
-2 5
-2 5
-1 2 5 6 7
-2 5 6 7
-2 5 6 7
-1 2 5 6 7
-2 5 6 7
-5 6 8
-
-Uwagi
-
-    Wolno założyć, że dane są poprawne.
-
-    Wolno założyć, że wszystkie dane liczby mieszczą się w zakresie typu int.
-
-    Efektywność rozwiązania nie będzie miała istotnego wpływu na ocenę. Należy jednak zadbać, by implementacja heurystyk miała koszt wielomianowy względem rozmiaru danych. Algorytm dokładny będzie miał koszt wykładniczy.
-
-    Rozwiązanie "wzorcowe" wykonuje na students powyższy przykład w 0.6 sekundy. Dla porównania, program pusty wykonuje się 0.3 sekundy.
-
-    Wolno korzystać ze wszystkiego, co jest w standardowej bibliotece klas Javy. Nie wolno korzystać z żadnych innych bibliotek.
-
-    Rozwiązanie powinno się kompilować na students kompilatorem Javy 8 /usr/bin/javac lub Javy 11 /opt/jdk-11.0.2/bin/javac.
-
-    Jako rozwiązanie należy wysłać archiwum .tar.gz, .zip lub .jar, zawierające kod źródłowy programu.
-
